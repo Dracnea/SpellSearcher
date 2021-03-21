@@ -17,6 +17,18 @@
     }
 })();
 
+class Item {
+    constructor(name, q1, q2, effect, spell1, spell2, history) {
+        this.name = name;
+        this.q1 = q1;
+        this.q2 = q2;
+        this.effect = effect;
+        this.spell1 = spell1;
+        this.spell2 = spell2;
+        this.history = history;
+    }
+}
+
 //Add GUI button to start search, mimics website format
 function gui() {
     var btn = document.createElement("button");
