@@ -40,3 +40,23 @@ function gui() {
     document.getElementsByClassName('premium-search-form')[0].appendChild(btn);
 }
 
+function searcher() {
+    //constant strings to reference item attributes
+    const id = "data-original_id",
+        name = "data-name",
+        q1 = "data-q_name",
+        q2 = "data-qe_name",
+        effect = "data-effect_name",
+        s1 = "data-spell_1",
+        s2 = "data-spell_2";
+    //set variables for page skipping
+    var skip = true;
+    sessionStorage.start = 1;
+    //set the path for which element is the description
+    var desc = document.querySelectorAll("h5");
+    //set the path for which element is the rows
+    var rows = document.querySelectorAll("li.item");
+    //set the path for which element is the links
+    var links = document.querySelectorAll("a.btn.btn-default.btn-xs");
+
+}
