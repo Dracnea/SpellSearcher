@@ -17,3 +17,14 @@
     }
 })();
 
+//Add GUI button to start search, mimics website format
+function gui() {
+    var btn = document.createElement("button");
+    btn.className = 'btn btn-premium btn-block btn-lg';
+    btn.innerHTML = "Spell Searcher";
+    btn.onclick = function() {
+        searcher();
+    }
+    document.getElementsByClassName('premium-search-form')[0].appendChild(btn);
+}
+
