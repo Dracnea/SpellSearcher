@@ -59,4 +59,12 @@ function searcher() {
     //set the path for which element is the links
     var links = document.querySelectorAll("a.btn.btn-default.btn-xs");
 
+    rows.forEach(addItem);
+    function addItem(item, i){
+        if(rows[i].hasAttribute(s1)) {
+            var link = links[i * 2 + 1].href;
+
+        }
+    }
 }
+
