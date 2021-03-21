@@ -50,7 +50,6 @@ function searcher() {
         s1 = "data-spell_1",
         s2 = "data-spell_2";
     //set variables for page skipping
-    var skip = true;
     sessionStorage.start = 1;
     //set the path for which element is the description
     var desc = document.querySelectorAll("h5");
@@ -63,7 +62,17 @@ function searcher() {
     function addItem(item, i){
         if(rows[i].hasAttribute(s1)) {
             var link = links[i * 2 + 1].href;
-            
+            sessionStorage.items += JSON.stringify(
+                new Item(
+                    rows[i].getAttribute(name),
+                    rows[i].getAttribute(q1),
+                    rows[i].getAttribute(q2),
+                    roww[i].getAttribute(effect),
+                    rows[i].getAttribute(spell1),
+                    rows[i].getAttribute(spell2),
+                    link
+                )
+            )
         }
     }
     skip();
