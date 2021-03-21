@@ -8,3 +8,12 @@
 // @grant        none
 // ==/UserScript==
 
+// Main Method to always run
+(function () {
+    if(sessionStorage.start == 1) {
+        searcher();
+    } else {
+        gui();
+    }
+})();
+
