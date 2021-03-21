@@ -67,9 +67,9 @@ function searcher() {
                     rows[i].getAttribute(name),
                     rows[i].getAttribute(q1),
                     rows[i].getAttribute(q2),
-                    roww[i].getAttribute(effect),
-                    rows[i].getAttribute(spell1),
-                    rows[i].getAttribute(spell2),
+                    rows[i].getAttribute(effect),
+                    rows[i].getAttribute(s1),
+                    rows[i].getAttribute(s2),
                     link
                 )
             )
@@ -79,7 +79,7 @@ function searcher() {
 }
 
 function skip(){
-    //get the element with the link tot he next page
+    //get the element with the link to the next page
     var link = document.evaluate(
         "/html/body/main/div/div/nav/ul/li/a",
         document,
