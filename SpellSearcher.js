@@ -1,10 +1,11 @@
 // ==UserScript==
-// @name TF2 Premium Search Spell Exporter
-// @description A script used to make premium searching for halloween spells on backpack.tf easier
-// @version 9.0
-// @include *backpack.tf/premium/search*
-// @grant    none
-// @namespace https://greasyfork.org/users/170895
+// @name         TF2 Premium Spell Searcher
+// @namespace    http://tampermonkey.net/
+// @version      9.0
+// @description  A script used to make premium searching for halloween spells on backpack.tf easier
+// @author       Dracnea
+// @match        https://backpack.tf/premium*
+// @grant        none
 // ==/UserScript==
 
 'use strict';
@@ -110,6 +111,7 @@ function printOut(){
     //close and focus the document
     myWindow.document.close();
     myWindow.focus();
+    sanitize();
 }
 
 function skip(){
@@ -129,4 +131,9 @@ function skip(){
     if(window.location.href == pageLink.snapshotItem(2).href){
         printOut();
     }
+}
+
+function sanitize() {
+    sessionStorage.clear();
+    location.reload();
 }
