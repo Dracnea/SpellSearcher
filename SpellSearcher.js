@@ -63,8 +63,38 @@ function searcher() {
     function addItem(item, i){
         if(rows[i].hasAttribute(s1)) {
             var link = links[i * 2 + 1].href;
-
+            
         }
     }
+    skip();
 }
 
+function skip(){
+    //get the element with the link tot he next page
+    var link = document.evaluate(
+        "/html/body/main/div/div/nav/ul/li/a",
+        document,
+        null,
+        XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
+        null
+    );
+    //if no spell is on this page then redirect to next page, extra check to ensure not first page
+    if(window.location.href != link.snapshotItem(2).href && window.location.href.indexOf("page=") > -1){
+        window.location.replace(link.snapshotItem(1).href);
+    }
+    //if we have completed the search then print and sanitize
+    if(window.location.href == link.snapshotItem(2).href){
+        printOut();
+        sanitize();
+    }
+
+    function printOut() {
+
+    }
+
+    //clean the session storage after running
+    function sanitize(){
+        sessionStorage.startCheck = 0;
+        location.reload();
+    }
+}
